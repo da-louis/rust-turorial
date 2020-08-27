@@ -3,23 +3,6 @@ use std::io::{BufRead, BufReader, stdin};
 
 use clap::Clap;
 
-#[derive(Clap, Debug)]
-#[clap(
-name = "My RPN program :)",
-version = "1.0.0",
-author = "da-louis",
-about = "Super awesome fantastic happy great highest sample RPN calculator :doge:"
-)]
-struct Opts {
-    /// Sets the level of verbosity
-    #[clap(short, long)]
-    verbose: bool,
-
-    /// Formulas written in RPN
-    #[clap(name = "FILE")]
-    formula_file: Option<String>,
-}
-
 struct RpnCalculator(bool);
 
 impl RpnCalculator {
@@ -63,6 +46,23 @@ impl RpnCalculator {
             panic!("invalid syntax")
         }
     }
+}
+
+#[derive(Clap, Debug)]
+#[clap(
+name = "My RPN program :)",
+version = "1.0.0",
+author = "da-louis",
+about = "Super awesome fantastic happy great highest sample RPN calculator :doge:"
+)]
+struct Opts {
+    /// Sets the level of verbosity
+    #[clap(short, long)]
+    verbose: bool,
+
+    /// Formulas written in RPN
+    #[clap(name = "FILE")]
+    formula_file: Option<String>,
 }
 
 fn main() {
