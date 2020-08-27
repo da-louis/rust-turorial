@@ -1,3 +1,5 @@
+# s/turorial/tutorial
+
 # rust-turorial
 trying "実践Rustプログラミング入門"
 
