@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader, stdin};
+use std::path::PathBuf;
 
 use anyhow::{bail, Context, ensure, Result};
 use clap::Clap;
@@ -64,7 +65,7 @@ struct Opts {
 
     /// Formulas written in RPN
     #[clap(name = "FILE")]
-    formula_file: Option<String>,
+    formula_file: Option<PathBuf>,
 }
 
 fn main() -> Result<()> {
